@@ -10,11 +10,13 @@ class Instance {
 
   checkNetwork = (isCheck = true) => {
     if (isCheck) {
-      this.unsubcrible = NetInfo.addEventListener(state => {
-        console.log('Connection type', state.type);
-        console.log('Connection connected', state.isConnected);
-        this.setInfo({...state});
-      });
+      if (!this.unsubcrible) {
+        this.unsubcrible = NetInfo.addEventListener(state => {
+          console.log('Connection type', state.type);
+          console.log('Connection connected', state.isConnected);
+          this.setInfo({...state});
+        });
+      }
     } else if (this.unsubcrible) {
       this.unsubcrible();
     }

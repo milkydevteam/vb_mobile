@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import style from './style/login.style';
+import actions from 'reduxes/actions';
 
 export default class LoginScreen extends PureComponent<> {
   constructor(props) {
@@ -12,7 +13,10 @@ export default class LoginScreen extends PureComponent<> {
 
   test = () => {
     const {navigation} = this.props;
-    alert(global.isConnect);
+    console.log(
+      'actions.NetworkModel.isConnected',
+      actions.NetworkModel.isConnected,
+    );
     navigation.navigate('HomeStack');
   };
 

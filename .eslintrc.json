@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": ["@react-native-community"],
+  "plugins": ["react", "jsx-a11y", "import", "react-native", "prettier"],
+  "rules": {
+    "global-require": "off"
+  },
+  "env": {
+    "jest": true,
+    "node": true,
+    "browser": true
+  }
+}

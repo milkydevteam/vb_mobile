@@ -7,7 +7,7 @@ const base = {
 };
 
 const iOSStatusBarHeight = isTaiTho() === true ? 44 : 20;
-const statusBarHeight = Platform.OS === 'ios' ? iOSStatusBarHeight : 22;
+const statusBarHeight = Platform.OS === 'ios' ? iOSStatusBarHeight : 32;
 const navBarHeight =
   Platform.OS === 'ios' ? 44 + statusBarHeight : 35 + statusBarHeight;
 const {width, height} = Dimensions.get('window');
@@ -21,9 +21,10 @@ const verticalScale = (size: number, factor: number = 1): number =>
 const header = isTaiTho() ? 80 : 60;
 const heightTabbar = isTaiTho() ? 65 : 50;
 const marginPost = verticalScale(8);
+const heightScreen = height;
 export {
   width as widthScreen,
-  height as heightScreen,
+  heightScreen,
   statusBarHeight,
   navBarHeight,
   horizontalScale,

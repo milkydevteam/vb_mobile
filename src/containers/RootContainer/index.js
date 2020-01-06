@@ -1,10 +1,11 @@
 import React, {PureComponent} from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
 import Navigator from 'navigators';
 import style from './style/index.style';
 import actions from 'reduxes/actions';
+import colors from 'themes/Colors';
 
 class RootContainer extends PureComponent<Props> {
   constructor(props) {
@@ -21,6 +22,7 @@ class RootContainer extends PureComponent<Props> {
   render() {
     return (
       <SafeAreaView style={style.areaContainer}>
+        <StatusBar translucent backgroundColor={colors.primaryRed} />
         <Navigator />
       </SafeAreaView>
     );

@@ -1,18 +1,18 @@
-import {createStackNavigator} from 'react-navigation-stack';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 import HomeScreen from 'containers/Home';
 import NewsDetail from 'containers/Home/newsDetail';
 import BranchMaps from 'containers/BranchMaps';
+import {widthScreen} from 'utilities/Tranform';
 
-const HomeStack = createStackNavigator(
+const HomeStack = createDrawerNavigator(
   {
-    BranchMaps,
     HomeScreen,
-    NewsDetail,
+    BranchMaps,
   },
   {
-    initialRouteKey: 'BranchMaps',
-    headerMode: 'none',
-    mode: 'card',
+    drawerType: 'slide',
+    drawerWidth: widthScreen / 2,
+    statusBarAnimation: 'fade',
   },
 );
 

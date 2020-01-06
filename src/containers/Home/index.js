@@ -1,8 +1,7 @@
 import React, {PureComponent} from 'react';
-import {View, Text, TouchableOpacity, TextInput, Alert} from 'react-native';
+import {View, Text, TouchableOpacity, TextInput} from 'react-native';
 import {connect} from 'react-redux';
 import style from './style/index.style';
-import actions from 'reduxes/actions';
 
 class HomeScreen extends PureComponent<> {
   constructor(props) {
@@ -10,27 +9,12 @@ class HomeScreen extends PureComponent<> {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.getData();
-  }
-
-  getData = () => {
-    // call api get data
-  };
-
-  changeUserInfo = async () => {
-    if (this.userName) {
-      this.props.setUser({name: this.userName}); // test redux
-      this.props.navigation.navigate('NewsDetail');
-    } else {
-      Alert.alert('Warning', 'you must fill name');
-    }
-  };
+  componentDidMount() {}
 
   render() {
     return (
       <View style={style.container}>
-        <TouchableOpacity onPress={this.changeUserInfo}>
+        <TouchableOpacity>
           <Text style={style.title}>Go to Detail Screen</Text>
         </TouchableOpacity>
         <TextInput

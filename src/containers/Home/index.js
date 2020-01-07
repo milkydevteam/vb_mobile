@@ -1,10 +1,12 @@
 import React, {PureComponent} from 'react';
-import {DrawerActions} from 'react-navigation-drawer';
+import {ScrollView} from 'react-native';
 import {connect} from 'react-redux';
 import AppContainer from 'components/appContainer';
 import HomeInfo from './components/homeInfo';
 import MenuFunction from './components/menuFunction';
 import LastActiveList from './components/lastActivity';
+import AccountSummary from './components/accountSummary';
+import style from './style/index.style';
 
 class HomeScreen extends PureComponent<> {
   constructor(props) {
@@ -12,18 +14,17 @@ class HomeScreen extends PureComponent<> {
     this.state = {};
   }
 
-  componentDidMount() {}
-
-  onPress = () => {
-    this.props.navigation.dispatch(DrawerActions.toggleDrawer());
-  };
-
   render() {
     return (
       <AppContainer navigation={this.props.navigation}>
-        <HomeInfo />
-        <MenuFunction />
-        <LastActiveList />
+        <ScrollView
+          style={style.scrollview}
+          contentContainerStyle={style.content}>
+          <HomeInfo />
+          <MenuFunction />
+          <LastActiveList />
+          <AccountSummary />
+        </ScrollView>
       </AppContainer>
     );
   }

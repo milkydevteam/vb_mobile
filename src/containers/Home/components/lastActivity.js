@@ -1,7 +1,9 @@
 import React, {PureComponent} from 'react';
-import {ScrollView, View, Text} from 'react-native';
+import {FlatList, View, Text, ActivityIndicator} from 'react-native';
 import style from './style/lastActivity.style';
 import ActivityItem from './activityItem';
+import {randomActivity} from '../randomData';
+import colors from 'themes/Colors';
 
 type Props = {};
 
@@ -9,45 +11,59 @@ export default class LastActiveList extends PureComponent<Props> {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        {
-          status: 'Approve',
-          label: 'Beneficiary List',
-          idCard: '201906211008288',
-        },
-        {
-          status: 'Approve',
-          label: 'Inhouse transfer',
-          idCard: '201906211008288',
-        },
-        {
-          status: 'Approve',
-          label: 'Pending Task',
-          idCard: '201906211008288',
-        },
-        {
-          status: 'Approve',
-          label: 'Exchange Rate',
-          idCard: '201906211008288',
-        },
-      ],
+      data: [],
+      isLoading: true,
     };
   }
-  renderItem = () =>
-    this.state.data.map((item, index) => (
-      <ActivityItem item={item} key={index.toString()} />
-    ));
+
+  componentDidMount() {
+    this.getData();
+  }
+
+  getData = async () => {
+    await this.setState({isLoading: true});
+    setTimeout(() => {
+      const data = randomActivity();
+      this.setState({data: [...this.state.data, ...data], isLoading: false});
+    }, 1000);
+  };
+  handleLoadMore = async () => {
+    if (this.state.isLoading) {
+      return;
+    }
+    this.getData();
+  };
+  renderItem = ({item, index}) => (
+    <ActivityItem item={item} key={index.toString()} />
+  );
+  renderFooter = () => {
+    if (this.state.isLoading) {
+      return (
+        <View style={style.scrollFooter}>
+          <ActivityIndicator color={colors.primaryRed} />
+        </View>
+      );
+    }
+    return null;
+  };
   render() {
     return (
       <View style={style.container}>
         <Text style={style.title}>Last Activity</Text>
-        <ScrollView
+        <FlatList
+          data={this.state.data}
           horizontal
           showsHorizontalScrollIndicator={false}
+          keyExtractor={(item, index) => index.toString()}
           style={style.scrollview}
-          contentContainerStyle={style.contentStyle}>
-          {this.renderItem()}
-        </ScrollView>
+          contentContainerStyle={style.contentStyle}
+          renderItem={this.renderItem}
+          initialNumToRender={10}
+          maxToRenderPerBatch={6}
+          onEndReachedThreshold={0.4}
+          onEndReached={this.handleLoadMore}
+          ListFooterComponent={this.renderFooter}
+        />
       </View>
     );
   }

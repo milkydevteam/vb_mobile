@@ -6,6 +6,7 @@ import Navigator from 'navigators';
 import style from './style/index.style';
 import actions from 'reduxes/actions';
 import colors from 'themes/Colors';
+import {withLocale} from 'constants/locales';
 
 class RootContainer extends PureComponent<Props> {
   constructor(props) {
@@ -29,4 +30,4 @@ class RootContainer extends PureComponent<Props> {
   }
 }
 
-export default connect()(RootContainer);
+export default connect()(withLocale(RootContainer));

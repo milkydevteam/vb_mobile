@@ -1,18 +1,11 @@
 import {StyleSheet} from 'react-native';
 
 const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFF',
+  scrollview: {
+    width: '100%',
   },
-  input: {
-    width: '90%',
-    height: 36,
-  },
-  title: {
-    color: 'blue',
+  content: {
+    width: '100%',
   },
 });
 

@@ -4,10 +4,10 @@ import colors from 'themes/Colors';
 
 const styles = StyleSheet.create({
   btnContainer: {
-    width: 120,
+    width: 126,
     height: '100%',
     paddingHorizontal: 7,
-    paddingTop: 10,
+    paddingVertical: 10,
     marginRight: 10,
     backgroundColor: colors.primaryRed,
     borderRadius: 3,

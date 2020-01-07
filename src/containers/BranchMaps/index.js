@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  Dimensions,
-  TouchableOpacity,
-} from 'react-native';
+import {StyleSheet, View, Dimensions} from 'react-native';
 
 import MapView, {MAP_TYPES} from 'react-native-maps';
 
@@ -42,7 +36,8 @@ class BranchMaps extends React.Component {
           mapType={MAP_TYPES.TERRAIN}
           style={styles.map}
           initialRegion={this.state.region}
-          onRegionChange={region => this.onRegionChange(region)}
+          showsMyLocationButton
+          showsUserLocation
         />
       </View>
     );

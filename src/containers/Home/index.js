@@ -1,7 +1,10 @@
 import React, {PureComponent} from 'react';
-import {View, Text, TouchableOpacity, TextInput} from 'react-native';
+import {DrawerActions} from 'react-navigation-drawer';
 import {connect} from 'react-redux';
-import style from './style/index.style';
+import AppContainer from 'components/appContainer';
+import HomeInfo from './components/homeInfo';
+import MenuFunction from './components/menuFunction';
+import LastActiveList from './components/lastActivity';
 
 class HomeScreen extends PureComponent<> {
   constructor(props) {
@@ -11,21 +14,17 @@ class HomeScreen extends PureComponent<> {
 
   componentDidMount() {}
 
+  onPress = () => {
+    this.props.navigation.dispatch(DrawerActions.toggleDrawer());
+  };
+
   render() {
     return (
-      <View style={style.container}>
-        <TouchableOpacity>
-          <Text style={style.title}>Go to Detail Screen</Text>
-        </TouchableOpacity>
-        <TextInput
-          style={style.input}
-          underlineColorAndroid="transparent"
-          onChangeText={text => {
-            this.userName = text;
-          }}
-          placeholder="username"
-        />
-      </View>
+      <AppContainer navigation={this.props.navigation}>
+        <HomeInfo />
+        <MenuFunction />
+        <LastActiveList />
+      </AppContainer>
     );
   }
 }

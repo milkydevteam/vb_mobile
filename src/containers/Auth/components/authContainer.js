@@ -6,11 +6,11 @@ import {heightScreen} from 'utilities/Tranform';
 const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
+    backgroundColor: colors.primaryRed,
   },
   container: {
     padding: 25,
-    backgroundColor: colors.primaryRed,
-    height: heightScreen,
+    height: heightScreen - 35,
   },
 });
 

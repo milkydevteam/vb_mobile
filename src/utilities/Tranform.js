@@ -19,7 +19,7 @@ const horizontalScale = (size: number, factor: number = 1): number =>
 const verticalScale = (size: number, factor: number = 1): number =>
   size + (ratioH * size - size) * factor;
 const header = isTaiTho() ? 80 : 60;
-const heightTabbar = isTaiTho() ? 65 : 50;
+const heightTabbar = isTaiTho() ? 50 : 40;
 const marginPost = verticalScale(8);
 const heightScreen = height;
 export {

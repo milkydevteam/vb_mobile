@@ -22,7 +22,7 @@ class RootContainer extends PureComponent<Props> {
   render() {
     return (
       <SafeAreaView style={style.areaContainer}>
-        <StatusBar translucent backgroundColor={colors.primaryRed} />
+        <StatusBar backgroundColor={colors.primaryRed} />
         <Navigator />
       </SafeAreaView>
     );

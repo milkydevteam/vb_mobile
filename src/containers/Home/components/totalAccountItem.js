@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {TouchableOpacity, View, Text, Animated} from 'react-native';
 import style from './style/summaryItem.style';
-import {__} from 'constants/locales';
+import {__} from 'locales';
 import {convertMoney} from 'utilities/convertMoney';
 
 type Props = {

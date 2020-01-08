@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {View, TouchableOpacity, Text, FlatList, Alert} from 'react-native';
-import {langService, __} from 'constants/locales';
+import {langService, __} from 'locales';
 import colors from 'themes/Colors';
 import style from './style/lang.style';
 import AppContainer from 'components/appContainer';

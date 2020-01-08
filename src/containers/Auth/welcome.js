@@ -4,7 +4,7 @@ import style from './style/welcome.style';
 import Logo from 'components/logo';
 import AuthContainer from './components/authContainer';
 import AuthButton from './components/authButton';
-import {__} from 'constants/locales';
+import {__} from 'locales';
 
 export default class WelcomeScreen extends PureComponent<> {
   constructor(props) {

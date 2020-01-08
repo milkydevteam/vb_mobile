@@ -4,7 +4,7 @@ import style from './style/lastActivity.style';
 import ActivityItem from './activityItem';
 import {randomActivity} from '../randomData';
 import colors from 'themes/Colors';
-import {__} from 'constants/locales';
+import {__} from 'locales';
 
 type Props = {};
 

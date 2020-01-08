@@ -7,7 +7,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import style from './style/summary.style';
-import {__} from 'constants/locales';
+import {__} from 'locales';
 import AccountItem from './totalAccountItem';
 import {randomDataAccount} from '../randomData';
 import colors from 'themes/Colors';

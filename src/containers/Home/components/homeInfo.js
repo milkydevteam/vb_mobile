@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import style from './style/homeInfo.style';
 import UserAvatar from 'components/userAvatar';
-import {__, langService} from 'constants/locales';
+import {__, langService} from 'locales';
 
 type Props = {
   navigation: Object,

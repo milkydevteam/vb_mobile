@@ -6,7 +6,7 @@ import {
   Text,
   TextStyle,
 } from 'react-native';
-import {langService} from 'constants/locales';
+import {langService} from 'locales';
 import colors from 'themes/Colors';
 
 const styles = StyleSheet.create({

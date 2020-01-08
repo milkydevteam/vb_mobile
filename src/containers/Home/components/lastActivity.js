@@ -4,6 +4,7 @@ import style from './style/lastActivity.style';
 import ActivityItem from './activityItem';
 import {randomActivity} from '../randomData';
 import colors from 'themes/Colors';
+import {__} from 'constants/locales';
 
 type Props = {};
 
@@ -49,7 +50,7 @@ export default class LastActiveList extends PureComponent<Props> {
   render() {
     return (
       <View style={style.container}>
-        <Text style={style.title}>Last Activity</Text>
+        <Text style={style.title}>{__('LAST_ACTIVITY')}</Text>
         <FlatList
           data={this.state.data}
           horizontal

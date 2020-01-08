@@ -61,7 +61,7 @@ export default class AccountSummary extends PureComponent<Props> {
   render() {
     return (
       <View style={style.container}>
-        <Text style={style.title}>{__('accSummary')}</Text>
+        <Text style={style.title}>{__('ACC_SUMMARY')}</Text>
         <FlatList
           style={style.scrollview}
           contentContainerStyle={style.contentStyle}

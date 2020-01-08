@@ -21,8 +21,7 @@ class Splash extends PureComponent<Props> {
 
   getState = async () => {
     setTimeout(() => {
-      console.log('test');
-      this.props.navigation.navigate('LoginScreen');
+      this.props.navigation.navigate('WelcomeScreen');
     }, 200);
     return null;
   };
@@ -30,7 +29,6 @@ class Splash extends PureComponent<Props> {
     return (
       <View style={style.container}>
         <StatusBar hidden />
-        {/* <View style={{backgroundColor: 'red', height: 100, width: 100}} /> */}
       </View>
     );
   }

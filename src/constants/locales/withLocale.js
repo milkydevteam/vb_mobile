@@ -59,6 +59,13 @@ export const langService = {
     ];
     return locales;
   },
+  checkDuplicate: locale => {
+    const languages = langService.getLocales();
+    const language = languages.find(l => {
+      return l.name === locale || l.code === locale;
+    });
+    return language;
+  },
   setLocale: locale => {
     const languages = langService.getLocales();
     const language = languages.find(l => {
@@ -72,6 +79,7 @@ export const langService = {
     AsyncStorage.setItem('lang', lang);
     I18n.defaultLocale = lang;
     I18n.locale = lang;
+    return locale;
   },
 };
 

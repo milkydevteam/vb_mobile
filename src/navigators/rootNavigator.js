@@ -1,5 +1,5 @@
 import {createSwitchNavigator, createAppContainer} from 'react-navigation';
-import HomeStack from './homeStack';
+import HomeStack from './drawerApp';
 import AuthStack from './authStack';
 
 const AppContainer = createSwitchNavigator(
@@ -8,7 +8,7 @@ const AppContainer = createSwitchNavigator(
     HomeStack,
   },
   {
-    initialRouteName: 'HomeStack',
+    initialRouteName: 'AuthStack',
   },
 );
 

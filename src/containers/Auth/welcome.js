@@ -4,6 +4,7 @@ import style from './style/welcome.style';
 import Logo from 'components/logo';
 import AuthContainer from './components/authContainer';
 import AuthButton from './components/authButton';
+import {__} from 'constants/locales';
 
 export default class WelcomeScreen extends PureComponent<> {
   constructor(props) {
@@ -17,7 +18,7 @@ export default class WelcomeScreen extends PureComponent<> {
       <AuthContainer>
         <Logo />
         <View style={style.body}>
-          <Text style={style.bodyText}>Welcome!</Text>
+          <Text style={style.bodyText}>{__('WELCOME')}!</Text>
           <Text style={style.bodyText}>Agribank Retail Mobile Banking</Text>
           <View style={style.bottomView}>
             <AuthButton

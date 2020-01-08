@@ -16,7 +16,7 @@ const AuthStack = createStackNavigator(
     VerifyOTP,
   },
   {
-    initialRouteKey: 'WelcomeScreen',
+    initialRouteKey: 'SplashScreen',
     headerMode: 'none',
     mode: 'modal',
   },

@@ -1,14 +1,12 @@
 import {createStackNavigator} from 'react-navigation-stack';
-import HomeScreen from 'containers/Home';
-import LanguageScreen from 'containers/Setting/languages';
+import SettingScreen from 'containers/Setting';
 
 const AuthStack = createStackNavigator(
   {
-    HomeScreen,
-    LanguageScreen,
+    SettingScreen,
   },
   {
-    initialRouteKey: 'HomeScreen',
+    initialRouteKey: 'SettingScreen',
     headerMode: 'none',
     mode: 'modal',
   },

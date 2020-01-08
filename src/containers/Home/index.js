@@ -15,15 +15,16 @@ class HomeScreen extends PureComponent<> {
   }
 
   render() {
+    const {navigation} = this.props;
     return (
       <AppContainer navigation={this.props.navigation}>
         <ScrollView
           style={style.scrollview}
           contentContainerStyle={style.content}>
-          <HomeInfo />
-          <MenuFunction />
-          <LastActiveList />
-          <AccountSummary />
+          <HomeInfo navigation={navigation} />
+          <MenuFunction navigation={navigation} />
+          <LastActiveList navigation={navigation} />
+          <AccountSummary navigation={navigation} />
         </ScrollView>
       </AppContainer>
     );

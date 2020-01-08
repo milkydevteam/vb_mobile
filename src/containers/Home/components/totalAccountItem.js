@@ -63,7 +63,7 @@ export default class AccountItem extends PureComponent<Props> {
               },
             ]}>
             <View style={style.labelView}>
-              <Text style={style.summaryText}>{__('curAccount')}</Text>
+              <Text style={style.summaryText}>{__('CUR_ACCOUNT')}</Text>
               <Text style={style.summaryText}>Total Available Balance</Text>
             </View>
             <View style={style.valueView}>

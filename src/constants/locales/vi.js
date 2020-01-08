@@ -1,7 +1,11 @@
 export default {
   // Common
-  welcome: 'Xin chào',
-  username: 'Bạn',
-  accSummary: 'Tóm tắt tài khoản',
-  curAccount: 'Tài khoản hiện tại',
+
+  WELCOME: 'Xin chào',
+  HELLO: 'Chào',
+  USER_NAME: 'Bạn',
+  ACC_SUMMARY: 'Tóm tắt tài khoản',
+  CUR_ACCOUNT: 'Tài khoản hiện tại',
+  SELECTED: 'Đã chọn',
+  LAST_ACTIVITY: 'Hoạt động gần đây',
 };

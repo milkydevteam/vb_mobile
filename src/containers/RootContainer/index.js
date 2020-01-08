@@ -2,12 +2,11 @@ import React, {PureComponent} from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
-import {NavigationActions} from 'react-navigation';
 import Navigator from 'navigators';
 import style from './style/index.style';
 import actions from 'reduxes/actions';
 import colors from 'themes/Colors';
-import {withLocale} from 'constants/locales';
+import {withLocale} from 'locales';
 import RenderRootView from 'containers/ViewRootController/RenderRootView';
 import RootAction from 'containers/ViewRootController/RootAction';
 

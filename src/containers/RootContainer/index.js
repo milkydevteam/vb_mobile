@@ -7,8 +7,8 @@ import style from './style/index.style';
 import actions from 'reduxes/actions';
 import colors from 'themes/Colors';
 import {withLocale} from 'locales';
-import RenderRootView from 'containers/ViewRootController/RenderRootView';
-import RootAction from 'containers/ViewRootController/RootAction';
+import RenderRootView from 'components/ViewRootController/RenderRootView';
+import RootAction from 'components/ViewRootController/RootAction';
 
 class RootContainer extends PureComponent<Props> {
   constructor(props) {

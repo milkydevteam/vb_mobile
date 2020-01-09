@@ -12,28 +12,37 @@ export default class MenuFunction extends PureComponent<Props> {
     this.menu = [
       {
         color: 'red',
-        label: 'Beneficiary List',
+        label: 'Beneficiary_List',
+        screen: 'BeneficiaryList',
       },
       {
         color: 'blue',
-        label: 'Inhouse transfer',
+        label: 'Inhouse_transfer',
+        screen: 'InhouseTransfer',
       },
       {
         color: 'yellow',
-        label: 'Pending Task',
+        label: 'Pending_Task',
+        screen: 'PendingTask',
       },
       {
         color: 'grey',
-        label: 'Exchange Rate',
+        label: 'Exchange_Rate',
+        screen: 'ExchangeRate',
       },
     ];
   }
+
+  onItemPress = screenName => {
+    this.props.navigation.navigate(screenName);
+  };
+
   renderItem = () =>
     this.menu.map((item, index) => (
       <FunctionItem
         key={index.toString()}
-        color={item.color}
-        label={item.label}
+        {...item}
+        onPress={this.onItemPress}
       />
     ));
   render() {

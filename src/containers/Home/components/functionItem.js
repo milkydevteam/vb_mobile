@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
 import colors from 'themes/Colors';
+import {__} from 'locales';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,8 +21,9 @@ const styles = StyleSheet.create({
   label: {
     width: '100%',
     color: colors.greenText,
-    fontSize: 13,
-    marginTop: 12,
+    fontSize: 15,
+    marginTop: 5,
+    textAlign: 'center',
   },
 });
 
@@ -29,10 +31,13 @@ const FunctionItem = (props: {
   onPress: () => void,
   label: String,
   color: String,
+  screen: String,
 }) => (
-  <TouchableOpacity style={styles.container}>
+  <TouchableOpacity
+    style={styles.container}
+    onPress={() => props.onPress(props.screen)}>
     <View style={{...styles.icon, backgroundColor: props.color}} />
-    <Text style={props.label}>{props.label}</Text>
+    <Text style={styles.label}>{__(props.label.toLocaleUpperCase())}</Text>
   </TouchableOpacity>
 );
 

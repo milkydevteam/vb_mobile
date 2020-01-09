@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
 import colors from 'themes/Colors';
-import {widthScreen} from 'utilities/Tranform';
+import {widthScreen, borderRadius} from 'utilities/Tranform';
 
 const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.secondRed,
-    borderRadius: 8,
+    borderRadius,
     marginTop: 15,
     paddingVertical: 7,
     alignItems: 'center',

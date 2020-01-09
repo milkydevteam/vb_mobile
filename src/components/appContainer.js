@@ -5,7 +5,9 @@ import Header from './header';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+  },
 });
 
 const AppContainer = (props: {
@@ -16,10 +18,14 @@ const AppContainer = (props: {
   <View style={{...styles.container, ...props.style}}>
     <Header
       title="Agribank Mobile"
-      leftButton={<Icon name="bars" size={28} color="white" />}
+      leftButton={<Icon name="bars" size={24} color="white" />}
+      rightButton={<Icon name="bell" size={24} color="white" />}
       onLeftPress={() =>
         props.navigation.dispatch(DrawerActions.toggleDrawer())
       }
+      onRightPress={() => props.navigation.navigate('Notification')}
+      leftType="LIB"
+      rightType="LIB"
     />
     {props.children}
   </View>

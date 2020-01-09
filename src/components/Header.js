@@ -65,7 +65,8 @@ type Props = {
   titleStyle?: Object,
   rightText: any,
   leftButton: any,
-  leftType: 'IMG' | 'LIB',
+  leftType?: 'IMG' | 'LIB',
+  rightType?: 'IMG' | 'LIB' | 'TXT',
 };
 
 export default class Header extends PureComponent<Props> {
@@ -76,6 +77,8 @@ export default class Header extends PureComponent<Props> {
     onRightPress: () => {},
     headerStyle: {},
     titleStyle: {},
+    leftType: 'IMG',
+    rightType: 'IMG',
   };
 
   renderLeftHeader = () => (
@@ -90,15 +93,11 @@ export default class Header extends PureComponent<Props> {
 
   renderRightHeader = () => (
     <TouchableOpacity onPress={this.props.onRightPress} style={styles.right}>
-      {this.props.rightButton ? (
-        <Image
-          source={this.props.rightButton}
-          style={this.props.rightStyle}
-          resizeMethod="resize"
-          resizeMode="contain"
-        />
-      ) : null}
-      {this.props.rightText || null}
+      {this.props.rightType !== 'IMG' ? (
+        this.props.rightButton
+      ) : (
+        <Image source={this.props.rightButton} style={this.props.rightStyle} />
+      )}
     </TouchableOpacity>
   );
 

@@ -12,7 +12,9 @@ import AccountItem from './totalAccountItem';
 import {randomDataAccount} from '../randomData';
 import colors from 'themes/Colors';
 
-type Props = {};
+type Props = {
+  navigation: Object,
+};
 
 export default class AccountSummary extends PureComponent<Props> {
   constructor(props) {
@@ -40,7 +42,11 @@ export default class AccountSummary extends PureComponent<Props> {
     this.getData();
   };
   renderItem = ({item, index}) => (
-    <AccountItem {...item} key={index.toString()} />
+    <AccountItem
+      {...item}
+      key={index.toString()}
+      onPress={() => this.props.navigation.navigate('AccountDetail')}
+    />
   );
   renderFooter = () => {
     if (this.state.data.length >= 10 && !this.state.isLoading) {

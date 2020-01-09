@@ -38,9 +38,9 @@ export const withLocale = Component => {
   return WraperComponent;
 };
 
-export const __ = t => {
-  const l = I18n.t(t);
-  if (!l) {
+export const __ = (t: String) => {
+  const l: String = I18n.t(t.toLocaleUpperCase());
+  if (!l || l.indexOf('missing') !== -1) {
     return t;
   }
   return l;

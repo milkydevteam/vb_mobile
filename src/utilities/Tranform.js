@@ -22,6 +22,8 @@ const header = isTaiTho() ? 80 : 60;
 const heightTabbar = isTaiTho() ? 50 : 40;
 const marginPost = verticalScale(8);
 const heightScreen = height;
+const borderRadius = 12;
+
 export {
   width as widthScreen,
   heightScreen,
@@ -32,4 +34,5 @@ export {
   header,
   heightTabbar,
   marginPost,
+  borderRadius,
 };

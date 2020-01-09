@@ -13,6 +13,7 @@ type Props = {
     balance: Number,
     type: String,
   }>,
+  onPress: () => void,
 };
 
 export default class AccountItem extends PureComponent<Props> {
@@ -35,7 +36,7 @@ export default class AccountItem extends PureComponent<Props> {
   };
 
   renderDetailItem = ({item}) => (
-    <TouchableOpacity style={style.detailAccount}>
+    <TouchableOpacity style={style.detailAccount} onPress={this.props.onPress}>
       <Text style={style.detailText}>
         {item.id} / {item.accountName} ({item.type})
       </Text>

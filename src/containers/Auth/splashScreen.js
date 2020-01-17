@@ -1,6 +1,6 @@
-import React, {PureComponent} from 'react';
-import {StatusBar, View} from 'react-native';
-import {connect} from 'react-redux';
+import React, { PureComponent } from 'react';
+import { StatusBar, View } from 'react-native';
+import { connect } from 'react-redux';
 import style from './style/splash.style';
 
 type Props = {

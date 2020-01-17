@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  ViewStyle,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {View, ViewStyle, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import colors from 'themes/Colors';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -29,14 +23,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const BackHeader = (props: {
-  style: ViewStyle,
-  title: String,
-  onPress: () => void,
-}) => (
-  <TouchableOpacity
-    style={{...styles.container, ...props.style}}
-    onPress={props.onPress}>
+const BackHeader = (props: {style: ViewStyle, title: String, onPress: () => void}) => (
+  <TouchableOpacity style={{...styles.container, ...props.style}} onPress={props.onPress}>
     <View style={styles.backBtn}>
       <Icon name="angle-left" color={colors.white} size={24} />
     </View>

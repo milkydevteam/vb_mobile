@@ -1,19 +1,23 @@
-import React, {PureComponent} from 'react';
-import {View, Text} from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, Text } from 'react-native';
 import style from './style/welcome.style';
 import Logo from 'components/logo';
 import AuthContainer from './components/authContainer';
 import AuthButton from './components/authButton';
-import {__} from 'locales';
+import { __ } from 'locales';
 
-export default class WelcomeScreen extends PureComponent<> {
+type Props = {
+  navigation: Object
+}
+
+export default class WelcomeScreen extends PureComponent<Props> {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
     return (
       <AuthContainer>
         <Logo />

@@ -1,5 +1,5 @@
-import React, {PureComponent} from 'react';
-import {TextInput, View, Text, TouchableOpacity} from 'react-native';
+import React, { PureComponent } from 'react';
+import { TextInput, View, Text, TouchableOpacity } from 'react-native';
 import style from './style/verifyOtp.style';
 
 type Props = {
@@ -20,7 +20,6 @@ class VerifyPhoneNumber extends PureComponent<Props, State> {
     this.state = {
       type: 'INPUT',
       disableSubmit: true,
-      network: '',
       status: 'EMPTY',
     };
     this.codeInput = [-1, -1, -1, -1, -1, -1];
@@ -29,23 +28,22 @@ class VerifyPhoneNumber extends PureComponent<Props, State> {
   componentDidMount() {
     this.sendCodeToPhone();
   }
-  verifyResult = credential => {};
   otherPhoneVerify = () => {
     this.props.navigation.navigate('LoginScreen');
   };
   sendCodeToPhone = async () => {};
 
-  renderView = (type: TYPE) => {
+  renderView = () => {
     const checkFull = () => {
       const check = this.codeInput.indexOf(-1);
       if (check === -1) {
-        this.setState({disableSubmit: false, status: 'SUCCESS'});
+        this.setState({ disableSubmit: false, status: 'SUCCESS' });
       } else {
-        this.setState({disableSubmit: true, status: 'EMPTY'});
+        this.setState({ disableSubmit: true, status: 'EMPTY' });
       }
       return check === -1;
     };
-    let statusStyle = {color: 'black', fontWeight: 'normal'};
+    const statusStyle = { color: 'black', fontWeight: 'normal' };
     let descript = 'Input OTP Code';
     if (this.state.status === 'WRONG') {
       descript = 'Please fill code again!';
@@ -59,14 +57,14 @@ class VerifyPhoneNumber extends PureComponent<Props, State> {
           {this.codeInput.map((item, index) => (
             <TextInput
               key={index.toString()}
-              ref={ref => {
+              ref={(ref) => {
                 this[`input${index}`] = ref;
               }}
               style={[style.input, statusStyle]}
               keyboardType="numeric"
               maxLength={1}
               defaultValue={item !== -1 ? item.toString() : ''}
-              onChangeText={text => {
+              onChangeText={(text) => {
                 this.codeInput[index] = text;
                 if (text === '') {
                   this.codeInput[index] = -1;
@@ -86,19 +84,18 @@ class VerifyPhoneNumber extends PureComponent<Props, State> {
             width: '100%',
             alignItems: 'flex-end',
             marginTop: 20,
-          }}>
+          }}
+        >
           <Text style={style.subTitle} onPress={this.sendCodeToPhone}>
             Resend OTP
           </Text>
         </View>
-        <View style={{width: '100%', alignItems: 'center'}}>
+        <View style={{ width: '100%', alignItems: 'center' }}>
           <TouchableOpacity
             onPress={this.otherPhoneVerify}
             disabled={this.state.disableSubmit}
-            style={[
-              style.btnSubmit,
-              !this.state.disableSubmit ? {backgroundColor: '#FFF'} : {},
-            ]}>
+            style={[style.btnSubmit, !this.state.disableSubmit ? { backgroundColor: '#FFF' } : {}]}
+          >
             <Text style={style.btnText}>Confirm</Text>
           </TouchableOpacity>
         </View>
@@ -107,9 +104,7 @@ class VerifyPhoneNumber extends PureComponent<Props, State> {
   };
 
   render() {
-    return (
-      <View style={style.verifyOTP}>{this.renderView(this.state.type)}</View>
-    );
+    return <View style={style.verifyOTP}>{this.renderView(this.state.type)}</View>;
   }
 }
 

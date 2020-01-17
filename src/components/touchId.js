@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import {TouchableOpacity, Image, StyleSheet} from 'react-native';
+import * as Keychain from 'react-native-keychain';
 import TouchID from 'react-native-touch-id';
 import images from 'themes/Images';
 import colors from 'themes/Colors';
@@ -49,10 +50,53 @@ export default class TouchIdAuthen extends PureComponent<Props> {
       });
   };
 
+  testKeychain = async () => {
+    const username = 'zuck';
+    const password = 'poniesRgr8';
+    const typeSupport = await Keychain.getSupportedBiometryType();
+    const securitySupport = await Keychain.getSecurityLevel();
+    if (!typeSupport) {
+      global.root.showDialog({
+        type: 'alert',
+        body: 'Thiết bị không hỗ trợ vân tay',
+      });
+      return;
+    }
+
+    // Store the credentials
+    await Keychain.setGenericPassword(username, password, {
+      accessControl: Keychain.ACCESS_CONTROL.BIOMETRY_CURRENT_SET,
+      authenticationPrompt: 'Xac thưc vân tay',
+      authenticationType: Keychain.AUTHENTICATION_TYPE.BIOMETRICS,
+    });
+    console.log('typeSupport', securitySupport);
+    try {
+      // Retrieve the credentials
+      const credentials = await Keychain.getGenericPassword({
+        authenticationPrompt: 'Xac thuc van tay',
+        accessControl: Keychain.ACCESS_CONTROL.BIOMETRY_CURRENT_SET,
+      });
+
+      if (credentials) {
+        console.log(
+          'Credentials successfully loaded for user ' +
+            credentials.username +
+            credentials.password +
+            credentials.service,
+        );
+      } else {
+        console.log('No credentials stored');
+      }
+    } catch (error) {
+      console.log("Keychain couldn't be accessed!", error);
+    }
+    await Keychain.resetGenericPassword();
+  };
+
   render() {
     return (
       <TouchableOpacity
-        onPress={this.showAuthen}
+        onPress={this.testKeychain}
         style={{...style.btnStyle, ...this.props.btnStyle}}>
         <Image
           source={images.touchId}

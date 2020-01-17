@@ -31,7 +31,7 @@ export const timeToDateString = (
   return `${dd}/${mm}/${yyyy}`;
 };
 
-export default number => {
+export default (number) => {
   const date = new Date();
   const date2 = new Date(number);
   const time = date2.toLocaleTimeString();
@@ -77,7 +77,7 @@ export const getWeek = (nextWeek = 0) => {
     const tmp = moment()
       .add(dif + dayToAdd, 'days')
       .format('DD/MM/YYYY');
-    weekData.push({thu: i, ngay: tmp});
+    weekData.push({ thu: i, ngay: tmp });
   }
   return weekData;
 };

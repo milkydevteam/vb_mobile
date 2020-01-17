@@ -1,4 +1,4 @@
-import {createStackNavigator} from 'react-navigation-stack';
+import { createStackNavigator } from 'react-navigation-stack';
 import LoginScreen from 'containers/Auth/login';
 import RegisterInfo from 'containers/Auth/register';
 import SplashScreen from 'containers/Auth/splashScreen';

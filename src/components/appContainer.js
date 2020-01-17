@@ -10,19 +10,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const AppContainer = (props: {
-  style: ViewStyle,
-  children: any,
-  navigation: Object,
-}) => (
+const AppContainer = (props: {style: ViewStyle, children: any, navigation: Object}) => (
   <View style={{...styles.container, ...props.style}}>
     <Header
       title="Agribank Mobile"
       leftButton={<Icon name="bars" size={24} color="white" />}
       rightButton={<Icon name="bell" size={24} color="white" />}
-      onLeftPress={() =>
-        props.navigation.dispatch(DrawerActions.toggleDrawer())
-      }
+      onLeftPress={() => props.navigation.dispatch(DrawerActions.toggleDrawer())}
       onRightPress={() => props.navigation.navigate('Notification')}
       leftType="LIB"
       rightType="LIB"

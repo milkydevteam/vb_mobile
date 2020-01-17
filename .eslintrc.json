@@ -1,10 +1,36 @@
 {
-  "root": true,
-  "extends": ["@react-native-community"],
-  "plugins": ["react", "jsx-a11y", "import", "react-native", "prettier"],
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "plugins": ["react", "jsx-a11y", "import", "react-native"],
   "rules": {
-    "global-require": "off",
-    "react-native/no-inline-styles": "off"
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "import/first": "off",
+    "no-plusplus": "off",
+    "no-mixed-operators": "off",
+    "comma-dangle":"off",
+    "function-paren-newline": "off",
+    "prefer-destructuring":"off",
+    "prefer-template": "off",
+    "import/no-extraneous-dependencies" : "off",
+    "camelcase": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/forbid-prop-types": [
+      1,
+      {
+        "forbid": ["any"]
+      }
+    ],
+    "linebreak-style": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "arrow-parens": [2, "always", { "requireForBlockBody": true }],
+    "global-require": "off"
   },
   "env": {
     "jest": true,

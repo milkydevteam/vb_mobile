@@ -1,7 +1,7 @@
 import React from 'react';
-import {ViewStyle, StyleSheet, View} from 'react-native';
-import {DrawerActions} from 'react-navigation-drawer';
-import Header from './header';
+import { ViewStyle, StyleSheet, View } from 'react-native';
+import { DrawerActions } from 'react-navigation-drawer';
+import Header from './Header';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const styles = StyleSheet.create({
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 });
 
 const AppContainer = (props: {style: ViewStyle, children: any, navigation: Object}) => (
-  <View style={{...styles.container, ...props.style}}>
+  <View style={{ ...styles.container, ...props.style }}>
     <Header
       title="Agribank Mobile"
       leftButton={<Icon name="bars" size={24} color="white" />}

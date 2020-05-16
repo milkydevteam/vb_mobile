@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<key>AppSecret</key>
-    <string>{APP_SECRET_VALUE}</string>
+	<key>AppSecret</key>
+  <string>df732965-041b-4f6d-a0a1-12ec3f2d935d</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

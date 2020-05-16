@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint .",
     "clean": "cd android && ./gradlew clean && cd ..",
-    "build": "cd android && ./gradlew assembleRelease && cd .."
+    "build": "cd android && ./gradlew assembleRelease && cd ..",
+    "postinstall": "npx jetify"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.7.1",
